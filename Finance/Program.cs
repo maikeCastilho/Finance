@@ -1,4 +1,5 @@
 ﻿using Finance.Model;
+using System.ComponentModel.DataAnnotations;
 
 namespace Finance
 {
@@ -6,10 +7,30 @@ namespace Finance
     {
         static void Main(string[] args)
         {
-            Account account = new Account(123);
-            account.deposit(500);
 
-            Console.WriteLine(account.Balance);
+            Account account1 = new Account(234235, 1500.00m, "James", "23424547750", 2000);
+            Account account2 = new Account(654321, 2300.00m, "Maike", "16022247730", 2003);
+
+            account1.Transfer(200, account2);
+
+            Console.WriteLine(account1.balance);
+            Console.WriteLine(account2.balance);
+
+            //Console.WriteLine("R$" + account1.Balance);
+            //Console.WriteLine("R$" + account2.Balance);
+
+            //double amount = account1.Balance + account2.Balance;
+
+
+            //accounts.Add(account1);
+            //accounts.Add(account2);
+
+            //double bigBalance = accounts.Max(b => b.balance);
+
+            //Console.WriteLine("Maior Saldo:" + bigBalance.Number);
+
+            //Console.WriteLine("Saldo das duas contas:" + amount);
+
         }
     }
 }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Finance.Model
 {
-    public class Agencia
+    public class Agency
     {
         private int _number;
         private string _name, _telephone;
 
-        public Agencia(int number)
+        public Agency(int number)
         {
             _number = number;
         }

@@ -6,16 +6,11 @@ using System.Threading.Tasks;
 
 namespace Finance.Model
 {
-    public class Clienteee
+    public class Client
     {
-        private int id;
         private string name;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
+        private string cpf;
+        private int anoNascimento;
 
         public string Name
         {
@@ -23,10 +18,37 @@ namespace Finance.Model
             set { name = value; }
         }
 
-        public void Client(int id, string name)
+        public string Cpf
         {
-            this.id = id;
-            this.name = name;
+            get { return cpf; }
+            set { cpf = value; }
         }
+
+        public int AnoNascimento
+        {
+            get { return anoNascimento; }
+            set {anoNascimento = value; }
+        }
+
+        public Client(string name, string cpf, int anoNascimento)
+        {
+            if (anoNascimento > 2006)
+            {
+                throw new ArgumentException("O cliente deve ser maior de 18");
+            }
+            else if (cpf.Length < 11)
+            {
+                throw new ArgumentException("Cpf inválido");
+            }
+            else
+            {
+                this.name = name;
+                this.cpf = cpf;
+                this.anoNascimento = anoNascimento;
+            }
+        }
+
+    
+
     }
 }

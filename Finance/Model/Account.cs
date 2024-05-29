@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +12,9 @@ namespace Finance.Model
     {
         public long number;
         public decimal balance;
+
+        public Client Client {  get; set; }
+      
 
         public long Number
         {
@@ -22,15 +27,16 @@ namespace Finance.Model
             get { return balance; }
         }
 
-        public Account(long number)
+        public Account(long number, decimal balance, string name, string cpf, int anoNascimento)
         {
-            this.number = number;
-        }
+            if (balance < 10.0m)
+            {
+                throw new ArgumentException("O valor mínimo para abrir uma conta é de $10,00");
+            }
 
-        public Account(long number, decimal balance)
-        {
             this.number = number;
             this.balance = balance;
+            Client = new Client(name, cpf, anoNascimento);
         }
 
         public void deposit(decimal value)
@@ -41,18 +47,34 @@ namespace Finance.Model
             }
         }
 
-
-        public decimal withdraw(decimal value)
+        public void withdraw(decimal value)
         {
+            const decimal tax = 10.0m;
+
             if (balance - value >= 0)
             {
+                balance -= tax;
                 balance -= value;
-                return balance;
             }
             else
             {
                 throw new ArgumentException("Valor do saque ultrapassa o saldo");
             }
+        }
+
+        public void Transfer(decimal value, Account destination_account) 
+        {
+
+            if (value > 0)
+            {
+                withdraw(value);
+                destination_account.deposit(value);
+            }
+        }
+
+        public string GetAccountDetails()
+        {
+            return "";
         }
     }
 }

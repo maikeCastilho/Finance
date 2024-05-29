@@ -10,11 +10,11 @@ namespace Finance
         public void DepositTest()
         {
             //build
-            decimal saldoInicial = 1000;
-            decimal valorDeposito = 1000;
-            decimal saldoFinal = 2000;
+            decimal saldoInicial = 1000m;
+            decimal valorDeposito = 1000m;
+            decimal saldoFinal = 2000m;
 
-            Account account1 = new Account(123, saldoInicial);
+            Account account1 = new Account(123, saldoInicial, "maike", "16022247730", 2003);
 
             //operation
             account1.deposit(valorDeposito);
@@ -27,10 +27,10 @@ namespace Finance
         public void WithdrawTest()
         {
             //build
-            decimal saldoInicial = 1000;
-            decimal valorSaque = 500;
-            decimal saldoFinal = 500;
-            Account account = new Account(123, saldoInicial);
+            decimal saldoInicial = 1000m;
+            decimal valorSaque = 500m;
+            decimal saldoFinal = 490m;
+            Account account = new Account(123, saldoInicial, "maike", "16022247730", 2003);
 
             //operation
             account.withdraw(valorSaque);
@@ -43,14 +43,14 @@ namespace Finance
         public void ValorSaqueMaiorSaldo()
         {
             //build
-            decimal saldoInicial = 1000;
-            decimal valorSaque = 1500;
+            decimal saldoInicial = 1000m;
+            decimal valorSaque = 2000m;
 
             //operation
-            Account conta1 = new Account(123, saldoInicial);
+            Account account1 = new Account(123, saldoInicial, "maike", "16022247730", 2003);
 
             //verify
-            Assert.ThrowsException<ArgumentException>(() => conta1.withdraw(valorSaque));
+            Assert.ThrowsException<ArgumentException>(() => account1.withdraw(valorSaque));
         }
 
     }
