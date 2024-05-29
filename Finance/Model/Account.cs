@@ -14,7 +14,8 @@ namespace Finance.Model
         public decimal balance;
 
         public Client Client {  get; set; }
-      
+        public Agency Agency { get; set; }
+
 
         public long Number
         {
@@ -27,7 +28,7 @@ namespace Finance.Model
             get { return balance; }
         }
 
-        public Account(long number, decimal balance, string name, string cpf, int anoNascimento)
+        public Account(long number, decimal balance, string name, string cpf, int anoNascimento, Agency agency)
         {
             if (balance < 10.0m)
             {
@@ -37,6 +38,7 @@ namespace Finance.Model
             this.number = number;
             this.balance = balance;
             Client = new Client(name, cpf, anoNascimento);
+            Agency = agency;
         }
 
         public void deposit(decimal value)

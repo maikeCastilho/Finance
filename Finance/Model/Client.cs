@@ -47,8 +47,5 @@ namespace Finance.Model
                 this.anoNascimento = anoNascimento;
             }
         }
-
-    
-
     }
 }

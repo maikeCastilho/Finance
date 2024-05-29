@@ -13,8 +13,9 @@ namespace Finance
             decimal saldoInicial = 1000m;
             decimal valorDeposito = 1000m;
             decimal saldoFinal = 2000m;
-
+            
             Account account1 = new Account(123, saldoInicial, "maike", "16022247730", 2003);
+            Console.WriteLine(account1.Agency.Name);
 
             //operation
             account1.deposit(valorDeposito);

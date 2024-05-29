@@ -11,9 +11,12 @@ namespace Finance.Model
         private int _number;
         private string _name, _telephone;
 
-        public Agency(int number)
+        public Agency(int number, string name, string telephone)
         {
             _number = number;
+            _name = name;
+            _telephone = telephone;
+
         }
 
         public int Number
