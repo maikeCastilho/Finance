@@ -1,2 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using Finance.Model;
+
+namespace Finance
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Account account = new Account(123);
+            account.deposit(500);
+
+            Console.WriteLine(account.Balance);
+        }
+    }
+}

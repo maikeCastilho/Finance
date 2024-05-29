@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema_Financeiro.Model
+namespace Finance.Model
 {
-    public class Client
+    public class Clienteee
     {
         private int id;
         private string name;
@@ -23,7 +23,7 @@ namespace Sistema_Financeiro.Model
             set { name = value; }
         }
 
-        public Client(int id, string name)
+        public void Client(int id, string name)
         {
             this.id = id;
             this.name = name;

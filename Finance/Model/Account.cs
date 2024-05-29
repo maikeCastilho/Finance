@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema_Financeiro.Model
+namespace Finance.Model
 {
     public class Account
     {
@@ -14,12 +14,12 @@ namespace Sistema_Financeiro.Model
         public long Number
         {
             get { return number; }
+            private set { number = value; }
         }
 
         public decimal Balance
         {
             get { return balance; }
-            set { balance = value; }
         }
 
         public Account(long number)
@@ -41,11 +41,17 @@ namespace Sistema_Financeiro.Model
             }
         }
 
-        public void withdraw(decimal value)
+
+        public decimal withdraw(decimal value)
         {
-            if (value > 0 && balance > 0)
+            if (balance - value >= 0)
             {
                 balance -= value;
+                return balance;
+            }
+            else
+            {
+                throw new ArgumentException("Valor do saque ultrapassa o saldo");
             }
         }
     }
