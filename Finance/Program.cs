@@ -17,8 +17,9 @@ namespace Finance
 
             account1.Transfer(200, account2);
 
-            Console.WriteLine(account1.balance);
-            Console.WriteLine(account2.balance);
+            Console.WriteLine(account1.Balance);
+            Console.WriteLine(account2.Balance);
+
 
             //Console.WriteLine("R$" + account1.Balance);
             //Console.WriteLine("R$" + account2.Balance);

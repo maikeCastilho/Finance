@@ -10,12 +10,10 @@ namespace Finance.Model
 {
     public class Account
     {
-        public long number;
-        public decimal balance;
-
+        private long number;
+        private decimal balance;
         public Client Client {  get; set; }
         public Agency Agency { get; set; }
-
 
         public long Number
         {
@@ -26,6 +24,7 @@ namespace Finance.Model
         public decimal Balance
         {
             get { return balance; }
+            set { balance = value; }
         }
 
         public Account(long number, decimal balance, string name, string cpf, int anoNascimento, Agency agency)
@@ -49,7 +48,7 @@ namespace Finance.Model
             }
         }
 
-        public void withdraw(decimal value)
+        public void Withdraw(decimal value)
         {
             const decimal tax = 10.0m;
 
@@ -69,7 +68,7 @@ namespace Finance.Model
 
             if (value > 0)
             {
-                withdraw(value);
+                Withdraw(value);
                 destination_account.deposit(value);
             }
         }
