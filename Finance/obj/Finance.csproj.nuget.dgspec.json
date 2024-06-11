@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\Finance\\Finance\\Finance.csproj": {}
+    "C:\\PROJETOS\\Finance\\Finance\\Finance.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\Finance\\Finance\\Finance.csproj": {
+    "C:\\PROJETOS\\Finance\\Finance\\Finance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\Finance\\Finance\\Finance.csproj",
+        "projectUniqueName": "C:\\PROJETOS\\Finance\\Finance\\Finance.csproj",
         "projectName": "Finance",
-        "projectPath": "C:\\Projetos\\Finance\\Finance\\Finance.csproj",
-        "packagesPath": "C:\\Users\\Allcateia - Maike\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\Finance\\Finance\\obj\\",
+        "projectPath": "C:\\PROJETOS\\Finance\\Finance\\Finance.csproj",
+        "packagesPath": "C:\\Users\\Maike Castilho\\.nuget\\packages\\",
+        "outputPath": "C:\\PROJETOS\\Finance\\Finance\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Allcateia - Maike\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Maike Castilho\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
