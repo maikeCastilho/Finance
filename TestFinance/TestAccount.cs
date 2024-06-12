@@ -2,7 +2,7 @@ using Finance.Model;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Finance
-{/*
+{
     [TestClass]
      public class TestAccount
     {
@@ -10,11 +10,11 @@ namespace Finance
         public void DepositTest()
         {
             //build
-            decimal saldoInicial = 1000m;
-            decimal valorDeposito = 1000m;
-            decimal saldoFinal = 2000m;
-            
-            Account account1 = new Account(123, saldoInicial, "maike", "16022247730", 2003);
+            decimal saldoInicial = 1000;
+            decimal valorDeposito = 1000;
+            decimal saldoFinal = 2000;
+            Agency agency = new Agency();
+            Account account1 = new Account(123, saldoInicial, "maike", "16022247730", 2003, agency);
             Console.WriteLine(account1.Agency.Name);
 
             //operation
@@ -55,5 +55,4 @@ namespace Finance
         }
 
     }
-    */
 }

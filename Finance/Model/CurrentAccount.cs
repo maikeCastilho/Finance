@@ -1,29 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Finance.Model
 {
-    public class CurrentAccount : Account
+    public class CurrentAccount : Agency
     {
-        public CurrentAccount(long number, decimal balance, string name, string cpf, int anoNascimento, Agency agency, decimal creditLimit)
-            : base(number, balance, name, cpf, anoNascimento, agency)
+        protected int Number;
+        protected string Titular;
+        protected double Balance;
+        protected string Password;
+
+        public int number
         {
-           
+            get { return Number; }
+            set { Number = value; }
         }
 
-        public decimal getBalance()
+        public double balance
         {
-            return Balance;
+            get { return Balance; }
+            set { Balance = value; }
         }
 
-        public void Withdraw(decimal amount)
+        public string titular
+        {
+            get { return titular; }
+            set { titular = value; }
+        }
+
+        public string password
+        {
+            get { return password; }
+            set { password = value; }
+        }
+
+        public bool Withdraw(double amount)
         {
             if (amount > 0 && amount <= (Balance + amount))
             {
                 Balance -= amount;
+                return true;
             }
             else
             {
@@ -31,18 +51,22 @@ namespace Finance.Model
             }
         }
 
-
-        public void Transfer(decimal amount, Account destination_account)
+        public double deposit(double value)
         {
-            if (amount > 0 && amount <= (Balance + amount))
+            if (value > 0)
             {
-                Withdraw(amount);
-                destination_account.deposit(amount);
+                Balance += value;
+                return Balance;
             }
             else
             {
-                throw new ArgumentException("Você não possuí saldo sufiente para essa transação");
+                throw new ArgumentException("Não foi possivel depositar");
             }
         }
+
+        public double getBalance()
+        {
+            return Balance;
+        }  
     }
 }

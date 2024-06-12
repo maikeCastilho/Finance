@@ -11,7 +11,7 @@ namespace Finance.Model
     public class Account
     {
         private long number;
-        private decimal balance;
+        protected double balance;
         public Client Client {  get; set; }
         public Agency Agency { get; set; }
 
@@ -21,15 +21,15 @@ namespace Finance.Model
             private set { number = value; }
         }
 
-        public decimal Balance
+        public double Balance
         {
             get { return balance; }
             set { balance = value; }
         }
 
-        public Account(long number, decimal balance, string name, string cpf, int anoNascimento, Agency agency)
+        public Account(long number, double balance, string name, string cpf, int anoNascimento, Agency agency)
         {
-            if (balance < 10.0m)
+            if (balance < 10.0)
             {
                 throw new ArgumentException("O valor mínimo para abrir uma conta é de $10,00");
             }
@@ -40,7 +40,7 @@ namespace Finance.Model
             Agency = agency;
         }
 
-        public void deposit(decimal value)
+        public void deposit(double value)
         {
             if (value > 0)
             {
@@ -48,9 +48,9 @@ namespace Finance.Model
             }
         }
 
-        public void Withdraw(decimal value)
+        public void Withdraw(double value)
         {
-            const decimal tax = 10.0m;
+            const double tax = 10.0;
 
             if (balance - value >= 0)
             {
@@ -63,7 +63,7 @@ namespace Finance.Model
             }
         }
 
-        public void Transfer(decimal value, Account destination_account) 
+        public void Transfer(double value, Account destination_account) 
         {
 
             if (value > 0)
@@ -71,11 +71,6 @@ namespace Finance.Model
                 Withdraw(value);
                 destination_account.deposit(value);
             }
-        }
-
-        public string GetAccountDetails()
-        {
-            return "";
         }
     }
 }

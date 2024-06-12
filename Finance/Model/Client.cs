@@ -8,6 +8,7 @@ namespace Finance.Model
 {
     public class Client
     {
+        private string email;
         private string name;
         private string cpf;
         private int anoNascimento;
@@ -28,6 +29,12 @@ namespace Finance.Model
         {
             get { return anoNascimento; }
             set {anoNascimento = value; }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set { email = value; }
         }
 
         public Client(string name, string cpf, int anoNascimento)

@@ -8,32 +8,26 @@ namespace Finance.Model
 {
     public class Agency
     {
-        private int _number;
-        private string _name, _telephone;
+        private List<CurrentAccount> contas;
 
-        public Agency(int number, string name, string telephone)
+        public Agency()
         {
-            _number = number;
-            _name = name;
-            _telephone = telephone;
-
+            contas = new List<CurrentAccount>();
         }
 
-        public int Number
+        public void InserirConta(CurrentAccount conta)
         {
-            get { return _number; }
+            contas.Add(conta);
         }
 
-        public string Name
+        public double CalculateTotal()
         {
-            get { return _name; }
-            set { _name = value; }
-        }
-
-        public string Telephone
-        {
-            get { return _telephone; }
-            set { _telephone = value; }
+            double total = 0; 
+            foreach (var conta in contas)
+            {
+                total += conta.balance;
+            }
+            return total;
         }
     }
 }
